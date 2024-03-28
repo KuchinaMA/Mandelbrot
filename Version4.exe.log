@@ -1,0 +1,490 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF72A836983 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF72A8AB284 (64-bit), Flags: Cmdre0, Thread: 0x4274 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF72A836983 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:36:03, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:36:13
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF72A836983 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF72A8AB284 (64-bit), Flags: Cmdre0, Thread: 0x4274 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF72A836983 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:36:03, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:36:13
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6B68469A4 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF6B68BB284 (64-bit), Flags: Cmdre0, Thread: 0x488C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6B68469A4 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:40:06, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:40:15
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6B68469A4 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF6B68BB284 (64-bit), Flags: Cmdre0, Thread: 0x488C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6B68469A4 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:40:06, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:40:15
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF7695969A4 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF76960B284 (64-bit), Flags: Cmdre0, Thread: 0x1318 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7695969A4 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:41:35, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:41:46
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF7695969A4 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF76960B284 (64-bit), Flags: Cmdre0, Thread: 0x1318 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7695969A4 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:41:35, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:41:46
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF68B5669B1 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF68B5DB284 (64-bit), Flags: Cmdre0, Thread: 0x46E4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF68B5669B1 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:43:12, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:43:25
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF68B5669B1 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF68B5DB284 (64-bit), Flags: Cmdre0, Thread: 0x46E4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF68B5669B1 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:43:12, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:43:25
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6856A697E в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF68571B284 (64-bit), Flags: Cmdre0, Thread: 0x35F8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6856A697E in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:45:33, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:45:42
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6856A697E в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF68571B284 (64-bit), Flags: Cmdre0, Thread: 0x35F8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6856A697E in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 15:45:33, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 15:45:42
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6435769B2 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF6435EB284 (64-bit), Flags: Cmdre0, Thread: 0x238C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6435769B2 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 16:03:09, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 16:03:18
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6435769B2 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF6435EB284 (64-bit), Flags: Cmdre0, Thread: 0x238C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6435769B2 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 16:03:09, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 16:03:18
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6F11369A2 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF6F11AB284 (64-bit), Flags: Cmdre0, Thread: 0x2B50 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6F11369A2 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 16:04:16, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 16:04:25
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Переполнение при операции с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_OVERFLOW (0xC0000091) при выполнении кода по адресу 0x00007FF6F11369A2 в функции main() в модуле C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400], Instance: 0x00007FF6F11AB284 (64-bit), Flags: Cmdre0, Thread: 0x2B50 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6F11369A2 in C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 172, Date: 2023-08-12 11:12:24 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\mingw\x86_64-w64-mingw32\include\txlib.h
+Compiled:	Mar 28 2024 16:04:16, GNU g++ 11.2.0, std=201703L, MinGW-W64 Runtime 9.0.0 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Mar 28 2024 16:04:25
+
+Run file:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot\Version4.exe
+Directory:	C:\Users\admin\Documents\ASM\My Projects\Mandelbrot\Mandelbrot
+
+--------------------------------------------------

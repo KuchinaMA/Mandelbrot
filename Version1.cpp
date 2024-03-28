@@ -1,27 +1,32 @@
+#include "TXLib.h"
 #include <stdio.h>
 #include <stdint.h>
-#include "TXLib.h"
+#include <stddef.h>
 
 #define TIME_MEASUREMENT
 
+static const float x_centre = -1.325f;
+static const float y_centre = 0;
+
+static const int N_iterations_max = 256;
+static const float r2_max = 100.f;
+
+const size_t running_num = 100;
+
+volatile int N_iterations = 0;
+
 extern "C" uint64_t get_time();
-const size_t running_num = 500;
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
+//void draw_pixels(int N_iterations, const int N_iterations_max, scr_t scr, size_t ix, size_t iy);
 
 int main() {
-
-    const float x_centre = -1.325f;
-    const float y_centre = 0;
 
     static const float width  = 800.f;
     static const float height = 600.f;
 
     const float dx = 1/width;
     const float dy = 1/width;
-
-    const int N_iterations_max = 256;
-    const float r2_max = 100.f;
 
     float x_shift = 0.f;
     float y_shift = 0.f;
@@ -64,7 +69,8 @@ int main() {
                     float x = x0,
                           y = y0;
 
-                    int N_iterations = 0;
+                    N_iterations = 0;
+
                     for (;N_iterations < N_iterations_max; N_iterations++) {
 
                         float x2 = x*x,
@@ -90,6 +96,7 @@ int main() {
                 //RGBQUAD color = (N < nMax) ? RGBQUAD {(BYTE) c*6, 0, c*10} : RGBQUAD {};
                 //RGBQUAD color = (N < nMax) ? RGBQUAD {c, c, c} : RGBQUAD {};
                 scr[iy][ix] = color;
+                //draw_pixels(N_iterations, N_iterations_max, scr, ix, iy);
                 #endif
 
                 }
@@ -127,3 +134,17 @@ void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
 
 
 }
+
+/*void draw_pixels(int N_iterations, const int N_iterations_max, scr_t scr, size_t ix, size_t iy) {
+
+    float I = sqrtf (sqrtf ((float)N_iterations / (float)N_iterations_max)) * 255.f;
+    //float I = (N % 2) * 255.f;
+
+    BYTE c = (BYTE)I;
+
+    RGBQUAD color = (N_iterations < N_iterations_max) ? RGBQUAD {(BYTE) (255 - c), (BYTE) (c%2 * 64), c} : RGBQUAD {};
+    //RGBQUAD color = (N < nMax) ? RGBQUAD {(BYTE) c*6, 0, c*10} : RGBQUAD {};
+    //RGBQUAD color = (N < nMax) ? RGBQUAD {c, c, c} : RGBQUAD {};
+    scr[iy][ix] = color;
+
+} */

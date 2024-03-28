@@ -1,12 +1,21 @@
-#include <stdio.h>
 #include "TXLib.h"
+#include <stdio.h>
 
 #define TIME_MEASUREMENT
 
-extern "C" uint64_t get_time();
-const size_t running_num = 500;
+static const float x_centre = -1.325f;
+static const float y_centre = 0;
+
+static const int N_iterations_max = 256;
+static const float r2_max = 100.f;
+
+const size_t running_num = 100;
 
 const size_t points_num = 8;
+
+volatile int N_iter = 0;
+
+extern "C" uint64_t get_time();
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
 
@@ -28,17 +37,13 @@ inline int mm256_movemask_ps (const float cmp[points_num]);
 
 int main() {
 
-    const float x_centre = -1.325f;
-    const float y_centre = 0;
+    Win32::_fpreset();
 
     static const float width  = 800.f;
     static const float height = 600.f;
 
     const float dx = 1/width;
     const float dy = 1/width;
-
-    const int N_iterations_max = 256;
-    const float r2_max = 100.f;
 
     float x_shift = 0.f;
     float y_shift = 0.f;
@@ -52,7 +57,6 @@ int main() {
     #ifndef TIME_MEASUREMENT
 
     txCreateWindow(width, height);
-    Win32::_fpreset();
     txBegin();
 
     typedef RGBQUAD (&scr_t)[(unsigned long long)height][(unsigned long long)width];
@@ -138,6 +142,7 @@ int main() {
                         mm256_add_ps(Y, Y, Y0);
 
                     }
+                    N_iter = N_iterations[0];
 
                     #ifndef TIME_MEASUREMENT
 
@@ -162,7 +167,7 @@ int main() {
         printf("%llu\n", general_time/running_num);
         #else
 
-        printf("\t\r%.0lf", txGetFPS());
+        printf("FPS: \t\r%.0lf", txGetFPS());
         txSleep();
     }
     #endif

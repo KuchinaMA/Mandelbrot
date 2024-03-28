@@ -1,17 +1,28 @@
-#include <stdio.h>
 #include "TXLib.h"
+#include <stdio.h>
 
 #define TIME_MEASUREMENT
 
+static const float x_centre = -1.325f;
+static const float y_centre = 0;
+
+static const int N_iterations_max = 256;
+static const float R2_max = 100.f;
+
+const size_t running_num = 100;
+
+const size_t points_num = 8;
+
+volatile float N_iter = 0;
+//volatile float N_iterations[points_num];
+
 extern "C" uint64_t get_time();
-const size_t running_num = 500;
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
 
 int main() {
 
-    const float x_centre = -1.325f;
-    const float y_centre = 0;
+    Win32::_fpreset();
 
     static const float width  = 800.f;
     static const float height = 600.f;
@@ -19,18 +30,12 @@ int main() {
     const float dx = 1/width;
     const float dy = 1/width;
 
-    const int N_iterations_max = 256;
-    const float R2_max = 100.f;
-
     float x_shift = 0.f;
     float y_shift = 0.f;
-
-    const size_t points_num = 8;
 
     #ifndef TIME_MEASUREMENT
 
     txCreateWindow(width, height);
-    Win32::_fpreset();
     txBegin();
 
     typedef RGBQUAD (&scr_t)[(unsigned long long)height][(unsigned long long)width];
@@ -67,7 +72,8 @@ int main() {
                     float X[points_num] = {}; for (size_t i = 0; i < points_num; i++) X[i] = X0[i];
                     float Y[points_num] = {}; for (size_t i = 0; i < points_num; i++) Y[i] = Y0[i];
 
-                    float N_iterations[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+                    float N_iterations[points_num] = {0, 0, 0, 0, 0, 0, 0, 0};
+                    //N_iterations = {0, 0, 0, 0, 0, 0, 0, 0};
 
                     for (size_t n_iter = 0; n_iter < N_iterations_max; n_iter++) {
 
@@ -95,6 +101,7 @@ int main() {
                         for (size_t i = 0; i < points_num; i++) X[i] = X2[i] - Y2[i] + X0[i];
                         for (size_t i = 0; i < points_num; i++) Y[i] = XY[i] + XY[i] + Y0[i];
                     }
+                    N_iter = N_iterations[0];
 
                     #ifndef TIME_MEASUREMENT
 
@@ -122,7 +129,7 @@ int main() {
         printf("%llu\n", general_time/running_num);
         #else
 
-        printf("\t\r%.0lf", txGetFPS());
+        printf("FPS: \t\r%.0lf", txGetFPS());
         txSleep();
     }
     #endif

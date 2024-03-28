@@ -3,17 +3,25 @@
 
 #define TIME_MEASUREMENT
 
+static const float x_centre = -1.325f;
+static const float y_centre = 0;
+
+static const int N_iterations_max = 256;
+static const float r2_max = 100.f;
+
+const size_t running_num = 100;
+
+const size_t points_num = 8;
+
+volatile __m256i N_iterations;
+
 extern "C" uint64_t get_time();
-const size_t running_num = 500;
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
 
 int main() {
 
-    const size_t points_num = 8;
-
-    const float x_centre = -1.325f;
-    const float y_centre = 0;
+    Win32::_fpreset();
 
     static const float width  = 800.f;
     static const float height = 600.f;
@@ -21,10 +29,8 @@ int main() {
     const float dx = 1/width;
     const float dy = 1/width;
 
-    const int N_iterations_max = 256;
     const __m256 N_max = _mm256_set1_ps(N_iterations_max);
 
-    const float r2_max = 100.f;
     __m256 R2_max = _mm256_set1_ps(r2_max);
 
     float x_shift = 0.f;
@@ -36,7 +42,6 @@ int main() {
     #ifndef TIME_MEASUREMENT
 
     txCreateWindow(width, height);
-    Win32::_fpreset();
     txBegin();
 
     typedef RGBQUAD (&scr_t)[(unsigned long long)height][(unsigned long long)width];
@@ -74,7 +79,7 @@ int main() {
                     __m256 X = X0;
                     __m256 Y = Y0;
 
-                    __m256i N_iterations = _mm256_setzero_si256();
+                    N_iterations = _mm256_setzero_si256();
 
                     for (int n_iter = 0; n_iter < N_iterations_max; n_iter++) {
 
@@ -123,7 +128,7 @@ int main() {
         printf("%llu\n", general_time/running_num);
         #else
 
-        printf("\t\r%.0lf", txGetFPS());
+        printf("FPS: \t\r%.0lf", txGetFPS());
         txSleep();
     }
     #endif
@@ -150,10 +155,10 @@ void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
 
 
 
-//1 1810934
-//2 1834192
-//3 1767614
-//4 1963043
+//1 1810934   415921944
+//2 1834192   187651032
+//3 1767614   259166399
+//4 1963043   57402160
 
 
 
