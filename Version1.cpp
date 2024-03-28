@@ -7,6 +7,8 @@
 extern "C" uint64_t get_time();
 const size_t running_num = 500;
 
+void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
+
 int main() {
 
     const float x_centre = -1.325f;
@@ -23,7 +25,6 @@ int main() {
 
     float x_shift = 0.f;
     float y_shift = 0.f;
-    //float scale = 1.f;
 
     #ifndef TIME_MEASUREMENT
 
@@ -40,23 +41,8 @@ int main() {
         if (txGetAsyncKeyState (VK_ESCAPE))
             break;
 
-        if (txGetAsyncKeyState (VK_RIGHT))
-            x_shift += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+        view_regulation(&x_shift, &y_shift, dx, dy);
 
-        if (txGetAsyncKeyState (VK_LEFT))
-            x_shift -= dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState (VK_UP))
-            y_shift += dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState (VK_DOWN))
-            y_shift -= dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        /*if (txGetAsyncKeyState ('A'))
-            scale += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState ('Z'))
-            scale -= dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);   */
         #else
         //uint64_t start_time = get_time();
         uint64_t general_time = 0;
@@ -70,8 +56,6 @@ int main() {
                 if (txGetAsyncKeyState (VK_ESCAPE))
                     break;
 
-                /*float x0 = ((          -  (width / 2)) * dx + ROI_X + xC) * scale,
-                        y0 = (((float)iy - (height / 2)) * dy + ROI_Y + yC) * scale;*/
                 float x0 = ((          -  (width / 2)) * dx + x_centre + x_shift);
                 float y0 = (((float)iy - (height / 2)) * dy + y_centre + y_shift);
 
@@ -116,10 +100,6 @@ int main() {
 
         }
 
-        //#ifdef TIME_MEASUREMENT
-
-        //uint64_t end_time = get_time() - start_time;
-        //printf("%llu\n", end_time);
         printf("%llu\n", general_time/running_num);
 
         #else
@@ -127,5 +107,23 @@ int main() {
         txSleep();
     }
     #endif
+
+}
+
+
+void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
+
+    if (txGetAsyncKeyState (VK_RIGHT))
+        *x_shift += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
+    if (txGetAsyncKeyState (VK_LEFT))
+        *x_shift -= dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
+    if (txGetAsyncKeyState (VK_UP))
+        *y_shift += dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
+    if (txGetAsyncKeyState (VK_DOWN))
+        *y_shift -= dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
 
 }

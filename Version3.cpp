@@ -8,6 +8,8 @@ const size_t running_num = 100;
 
 const size_t points_num = 8;
 
+void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
+
 inline void mm256_set_ps (float res[points_num], float val7, float val6, float val5, float val4, float val3, float val2, float val1, float val0);
 inline void mm256_set1_ps (float res[points_num], float val);
 inline void mm256_setzero_si256 (int res[points_num]);
@@ -61,27 +63,10 @@ int main() {
         if (txGetAsyncKeyState (VK_ESCAPE))
             break;
 
-        if (txGetAsyncKeyState (VK_RIGHT))
-            x_shift += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState (VK_LEFT))
-            x_shift -= dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState (VK_UP))
-            y_shift += dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState (VK_DOWN))
-            y_shift -= dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        /*if (txGetAsyncKeyState ('A'))
-            scale += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
-
-        if (txGetAsyncKeyState ('Z'))
-            scale -= dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);*/
+        view_regulation(&x_shift, &y_shift, dx, dy);
 
         #else
-        //uint64_t start_time = get_time();
-        //#endif
+
         uint64_t general_time = 0;
         for (size_t run_num = 0; run_num < running_num; run_num++) {
 
@@ -93,8 +78,6 @@ int main() {
                 if (txGetAsyncKeyState (VK_ESCAPE))
                     break;
 
-                /*float x0 = ((          - 400.f) * dx + ROI_X + xC) * scale,
-                        y0 = (((float)iy - 300.f) * dy + ROI_Y + yC) * scale;*/
                 float x0 = ((          -  (width / 2)) * dx + x_centre + x_shift);
                 float y0 = (((float)iy - (height / 2)) * dy + y_centre + y_shift);
 
@@ -176,11 +159,6 @@ int main() {
             general_time += time_taken;
         }
 
-        //#ifdef TIME_MEASUREMENT
-
-        //uint64_t end_time = get_time() - start_time;
-        //printf("%llu\n", end_time);
-
         printf("%llu\n", general_time/running_num);
         #else
 
@@ -188,6 +166,23 @@ int main() {
         txSleep();
     }
     #endif
+
+}
+
+void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
+
+    if (txGetAsyncKeyState (VK_RIGHT))
+        *x_shift += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
+    if (txGetAsyncKeyState (VK_LEFT))
+        *x_shift -= dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
+    if (txGetAsyncKeyState (VK_UP))
+        *y_shift += dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
+    if (txGetAsyncKeyState (VK_DOWN))
+        *y_shift -= dy * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
+
 
 }
 
