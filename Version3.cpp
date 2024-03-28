@@ -4,7 +4,7 @@
 #define TIME_MEASUREMENT
 
 extern "C" uint64_t get_time();
-const size_t running_num = 100;
+const size_t running_num = 500;
 
 const size_t points_num = 8;
 

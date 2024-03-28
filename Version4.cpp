@@ -4,7 +4,7 @@
 #define TIME_MEASUREMENT
 
 extern "C" uint64_t get_time();
-const size_t running_num = 100;
+const size_t running_num = 500;
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
 
@@ -151,9 +151,9 @@ void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
 
 
 //1 1810934
-//2 1886058
-//3 1888461
-//4 1961616
+//2 1834192
+//3 1767614
+//4 1963043
 
 
 
