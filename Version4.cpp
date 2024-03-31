@@ -82,6 +82,8 @@ int main() {
 
 }
 
+
+
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
 
     if (txGetAsyncKeyState (VK_RIGHT))
@@ -171,8 +173,8 @@ void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_h
 
 
 //1 1810934   415921944
-//2 1834192   187651032
-//3 1767614   259166399  282390538 276580043
+//2 1834192   187651032  1029456696 187737443
+//3 1767614   259166399  282390538  276580043
 //4 1963043   57402160
 
 
