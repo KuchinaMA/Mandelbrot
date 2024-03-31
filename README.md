@@ -21,6 +21,6 @@ _Примечание 2_. Согласно свойствам множества
 
 Визуализация построенного таким образом множества Мандельброта:
 
-<img src = "Mandelbrot_picture.png" width="600" height="450">
+<img src = "Mandelbrot_picture.png" width="800" height="600">
 
 ##
