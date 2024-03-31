@@ -26,7 +26,7 @@ volatile int N_iterations = 0;
 extern "C" uint64_t get_time();
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
-void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy);
+void draw_pixels(int N_iterations, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy);
 void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_height][(size_t)window_width]);
 
 
@@ -45,7 +45,6 @@ int main() {
     #endif
 
     scr_t scr = (scr_t) *txVideoMemory();
-
 
     #ifndef TIME_MEASUREMENT
     for (;;) {
@@ -100,7 +99,7 @@ void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
 
 }
 
-void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy) {
+void draw_pixels(int N_iterations, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy) {
 
     float I = sqrtf (sqrtf ((float)N_iterations / (float)N_iterations_max)) * 255.f;
     //float I = (N % 2) * 255.f;
@@ -147,7 +146,7 @@ void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_h
             }
 
             #ifndef TIME_MEASUREMENT
-            draw_pixels(N_iterations, N_iterations_max, scr, ix, iy);
+            draw_pixels(N_iterations, scr, ix, iy);
             #endif
 
         }
