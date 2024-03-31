@@ -26,7 +26,10 @@ volatile int N_iterations = 0;
 extern "C" uint64_t get_time();
 
 void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
-void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD* scr, size_t ix, size_t iy);
+void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy);
+void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_height][(size_t)window_width]);
+
+
 
 int main() {
 
@@ -39,11 +42,12 @@ int main() {
 
     txCreateWindow(window_width, window_height);
     txBegin();
+    #endif
 
-    //typedef RGBQUAD (&scr_t)[(unsigned long long)window_height][(unsigned long long)window_width];
     scr_t scr = (scr_t) *txVideoMemory();
 
 
+    #ifndef TIME_MEASUREMENT
     for (;;) {
 
         if (txGetAsyncKeyState (VK_ESCAPE))
@@ -52,49 +56,16 @@ int main() {
         view_regulation(&x_shift, &y_shift, dx, dy);
 
         #else
-        //uint64_t start_time = get_time();
+
         uint64_t general_time = 0;
+
         for (size_t run_num = 0; run_num < running_num; run_num++) {
 
             uint64_t start_time = get_time();
             #endif
 
-            for (size_t iy = 0; iy < (size_t)window_height; iy++) {
+            count_mandelbrot(x_shift, y_shift, scr);
 
-                if (txGetAsyncKeyState (VK_ESCAPE))
-                    break;
-
-                float x0 = ((          -  (window_width / 2)) * dx + x_centre + x_shift);
-                float y0 = (((float)iy - (window_height / 2)) * dy + y_centre + y_shift);
-
-                for (size_t ix = 0; ix < (size_t)window_width; ix++, x0 += dx) {
-
-                    float x = x0,
-                          y = y0;
-
-                    N_iterations = 0;
-
-                    for (;N_iterations < N_iterations_max; N_iterations++) {
-
-                        float x2 = x*x,
-                              y2 = y*y,
-                              xy = x*y;
-
-                        float r2 = x2 + y2;
-
-                        if (r2 >= r2_max)
-                            break;
-
-                        x = x2 - y2 + x0;
-                        y = xy + xy + y0;
-                    }
-
-                #ifndef TIME_MEASUREMENT
-                draw_pixels(N_iterations, N_iterations_max, scr, ix, iy);
-                #endif
-
-                }
-            }
             #ifdef TIME_MEASUREMENT
             uint64_t time_taken = get_time() - start_time;
             general_time += time_taken;
@@ -129,7 +100,7 @@ void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
 
 }
 
-void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD* scr, size_t ix, size_t iy) {
+void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy) {
 
     float I = sqrtf (sqrtf ((float)N_iterations / (float)N_iterations_max)) * 255.f;
     //float I = (N % 2) * 255.f;
@@ -139,7 +110,49 @@ void draw_pixels(int N_iterations, const int N_iterations_max, RGBQUAD* scr, siz
     RGBQUAD color = (N_iterations < N_iterations_max) ? RGBQUAD {(BYTE) (255 - c), (BYTE) (c%2 * 64), c} : RGBQUAD {};
     //RGBQUAD color = (N < nMax) ? RGBQUAD {(BYTE) c*6, 0, c*10} : RGBQUAD {};
     //RGBQUAD color = (N < nMax) ? RGBQUAD {c, c, c} : RGBQUAD {};
-    //scr[iy][ix] = color;
-    scr[iy*(size_t)window_width + ix] = color;
+    scr[iy][ix] = color;
 
 }
+
+void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_height][(size_t)window_width]) {
+
+    for (size_t iy = 0; iy < (size_t)window_height; iy++) {
+
+        if (txGetAsyncKeyState (VK_ESCAPE))
+            break;
+
+        float x0 = ((          -  (window_width / 2)) * dx + x_centre + x_shift);
+        float y0 = (((float)iy - (window_height / 2)) * dy + y_centre + y_shift);
+
+        for (size_t ix = 0; ix < (size_t)window_width; ix++, x0 += dx) {
+
+            float x = x0,
+                  y = y0;
+
+            N_iterations = 0;
+
+            for (;N_iterations < N_iterations_max; N_iterations++) {
+
+                float x2 = x*x,
+                      y2 = y*y,
+                      xy = x*y;
+
+                float r2 = x2 + y2;
+
+                if (r2 >= r2_max)
+                    break;
+
+                x = x2 - y2 + x0;
+                y = xy + xy + y0;
+            }
+
+            #ifndef TIME_MEASUREMENT
+            draw_pixels(N_iterations, N_iterations_max, scr, ix, iy);
+            #endif
+
+        }
+    }
+}
+
+
+
