@@ -29,21 +29,21 @@ void view_regulation (float* x_shift, float* y_shift);
 void draw_pixels(int* N_iterations, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy);
 void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_height][(size_t)window_width], float* multipliers, float* R2_max);
 
-inline void mm256_set_ps (float res[points_num], float val7, float val6, float val5, float val4, float val3, float val2, float val1, float val0);
-inline void mm256_set1_ps (float res[points_num], float val);
-inline void mm256_setzero_si256 (int res[points_num]);
+inline void mm256_set_ps (float res[points_num], float val7, float val6, float val5, float val4, float val3, float val2, float val1, float val0) __attribute__((always_inline));
+inline void mm256_set1_ps (float res[points_num], float val) __attribute__((always_inline));
+inline void mm256_setzero_si256 (int res[points_num]) __attribute__((always_inline));
 
-inline void mm256_cpy_ps (float res[points_num], const float src[points_num]);
+inline void mm256_cpy_ps (float res[points_num], const float src[points_num]) __attribute__((always_inline));
 
-inline void mm256_add_ps (float res[points_num], const float reg1[points_num], const float reg2[points_num]);
-inline void mm256_sub_ps (float res[points_num], const float reg1[points_num], const float reg2[points_num]);
-inline void mm256_mul_ps (float res[points_num], const float reg1[points_num], const float reg2[points_num]);
+inline void mm256_add_ps (float res[points_num], const float reg1[points_num], const float reg2[points_num]) __attribute__((always_inline));
+inline void mm256_sub_ps (float res[points_num], const float reg1[points_num], const float reg2[points_num]) __attribute__((always_inline));
+inline void mm256_mul_ps (float res[points_num], const float reg1[points_num], const float reg2[points_num]) __attribute__((always_inline));
 
-inline void mm256_sub_epi32 (int res[points_num], const int reg1[points_num], const float reg2[points_num]);
+inline void mm256_sub_epi32 (int res[points_num], const int reg1[points_num], const float reg2[points_num]) __attribute__((always_inline));
 
-inline void mm256_cmple_ps (float cmp[points_num], const float reg1[points_num], const float reg2[points_num]);
+inline void mm256_cmple_ps (float cmp[points_num], const float reg1[points_num], const float reg2[points_num]) __attribute__((always_inline));
 
-inline int mm256_movemask_ps (const float cmp[points_num]);
+inline int mm256_movemask_ps (const float cmp[points_num]) __attribute__((always_inline));
 
 int main() {
 
