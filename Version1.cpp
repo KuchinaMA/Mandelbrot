@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <stddef.h>
 
-//#define TIME_MEASUREMENT
+#define TIME_MEASUREMENT
 
 static const float window_width  = 800.f;
 static const float window_height = 600.f;
@@ -25,7 +25,7 @@ volatile int N_iterations = 0;
 
 extern "C" uint64_t get_time();
 
-void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
+void view_regulation (float* x_shift, float* y_shift);
 void draw_pixels(int N_iterations, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy);
 void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_height][(size_t)window_width]);
 
@@ -46,13 +46,14 @@ int main() {
 
     scr_t scr = (scr_t) *txVideoMemory();
 
+
     #ifndef TIME_MEASUREMENT
     for (;;) {
 
         if (txGetAsyncKeyState (VK_ESCAPE))
             break;
 
-        view_regulation(&x_shift, &y_shift, dx, dy);
+        view_regulation(&x_shift, &y_shift);
 
         #else
 
@@ -82,7 +83,7 @@ int main() {
 }
 
 
-void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
+void view_regulation (float* x_shift, float* y_shift) {
 
     if (txGetAsyncKeyState (VK_RIGHT))
         *x_shift += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);

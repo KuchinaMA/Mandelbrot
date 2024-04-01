@@ -1,7 +1,7 @@
 #include "TXLib.h"
 #include <immintrin.h>
 
-//#define TIME_MEASUREMENT
+#define TIME_MEASUREMENT
 
 static const float window_width  = 800.f;
 static const float window_height = 600.f;
@@ -30,7 +30,7 @@ volatile __m256i N_iterations;
 
 extern "C" uint64_t get_time();
 
-void view_regulation (float* x_shift, float* y_shift, float dx, float dy);
+void view_regulation (float* x_shift, float* y_shift);
 void draw_pixels(__m256i N_iterations, RGBQUAD scr[(size_t)window_height][(size_t)window_width], size_t ix, size_t iy);
 void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_height][(size_t)window_width]);
 
@@ -55,7 +55,7 @@ int main() {
         if (txGetAsyncKeyState (VK_ESCAPE))
             break;
 
-        view_regulation(&x_shift, &y_shift, dx, dy);
+        view_regulation(&x_shift, &y_shift);
 
         #else
 
@@ -84,7 +84,7 @@ int main() {
 
 
 
-void view_regulation (float* x_shift, float* y_shift, float dx, float dy) {
+void view_regulation (float* x_shift, float* y_shift) {
 
     if (txGetAsyncKeyState (VK_RIGHT))
         *x_shift += dx * (txGetAsyncKeyState (VK_SHIFT) ? 100.f : 10.f);
@@ -172,9 +172,13 @@ void count_mandelbrot(float x_shift, float y_shift, RGBQUAD scr[(size_t)window_h
 
 
 
+//O0          894402050 884516047 904521722
+
+//O3          420541364 425600682 430086117
+
 //1 1810934   415921944
 //2 1834192   187651032  1029456696 187737443
-//3 1767614   259166399  282390538  276580043
+//3 1767614   259166399  282390538  276580043 258743844
 //4 1963043   57402160
 
 
